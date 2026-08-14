@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relai · 知意 — Your Digital Self, Always Present</title>
+<meta name="description" content="Relai creates your AI-powered digital self for networking, dating, and relationships.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A10;--surface:#14131A;--card:#1C1B24;--border:rgba(255,255,255,.06);--text:#E8E6EF;--text-mid:#B0ACBE;--text-dim:#7E7A8C;--accent:#B38BFA;--accent2:#5BC4BE;--gradient:linear-gradient(135deg,#B38BFA,#5BC4BE);--glow:rgba(179,139,250,.08);--mia-bub:#2D2440;--jam-bub:#1A2A35;--mia-tr:#C9B3F0;--jam-tr:#8DD4D0;--clone-bg:rgba(255,180,60,.12);--clone-c:#FFB43C;--ins-bg:rgba(179,139,250,.04);--ins-bdr:rgba(179,139,250,.12)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,10,16,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nl{font-family:'Fraunces',serif;font-size:22px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nl span{font-size:14px;-webkit-text-fill-color:var(--text-dim);margin-left:6px;font-family:'DM Sans';font-weight:400}
+.nk{display:flex;gap:24px;align-items:center}.nk a{color:var(--text-dim);font-size:13px;font-weight:500;text-decoration:none;transition:color .2s}.nk a:hover{color:var(--text)}
+.nc{padding:8px 22px;border-radius:24px;border:1px solid rgba(179,139,250,.3);background:rgba(179,139,250,.08);color:var(--accent)!important;font-weight:600!important}
+.nc:hover{background:rgba(179,139,250,.15);border-color:rgba(179,139,250,.5)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(ellipse,rgba(179,139,250,.06) 0%,transparent 70%);pointer-events:none}
+.hb{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding:6px 16px;border-radius:24px;background:rgba(179,139,250,.08);border:1px solid rgba(179,139,250,.15);margin-bottom:28px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1.15;max-width:700px;margin-bottom:20px}
+.hero h1 em{font-style:italic;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hs{font-size:18px;color:var(--text-mid);max-width:520px;margin-bottom:40px;line-height:1.7}
+.ha{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.bp{padding:14px 32px;border-radius:50px;border:none;background:var(--gradient);color:#0B0A10;font-family:'DM Sans';font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.bp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(179,139,250,.25)}
+.bs{padding:14px 32px;border-radius:50px;border:1px solid var(--border);background:0;color:var(--text);font-family:'DM Sans';font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:border-color .2s}
+.bs:hover{border-color:rgba(255,255,255,.15)}
+.ht{margin-top:60px;font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--text-dim)}
+section{padding:100px 24px;max-width:960px;margin:0 auto}
+.sl{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.st{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,40px);font-weight:600;line-height:1.25;margin-bottom:16px}
+.sd{font-size:16px;color:var(--text-mid);max-width:600px;line-height:1.7;margin-bottom:48px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:border-color .3s,transform .3s}
+.step:hover{border-color:rgba(179,139,250,.2);transform:translateY(-4px)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--glow);border:1px solid rgba(179,139,250,.15);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--accent);margin-bottom:18px}
+.step h3{font-size:17px;font-weight:600;margin-bottom:8px}.step p{font-size:14px;color:var(--text-mid);line-height:1.6}
+.uc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.uci{padding:28px 24px;border-radius:16px;border:1px solid var(--border);background:var(--card);text-align:center;transition:border-color .3s}
+.uci:hover{border-color:rgba(179,139,250,.2)}.uci-i{font-size:32px;margin-bottom:12px}.uci h3{font-size:16px;font-weight:600;margin-bottom:6px}.uci p{font-size:13px;color:var(--text-dim);line-height:1.5}
+/* Demo */
+.ds{padding:100px 24px;max-width:1100px;margin:0 auto}
+.dh{text-align:center;margin-bottom:40px}
+.dtabs{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.dtab{padding:10px 20px;font-family:'DM Sans';font-size:13px;font-weight:600;border:1px solid var(--border);border-radius:24px;background:0;color:var(--text-dim);cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.dtab.active{background:rgba(179,139,250,.1);border-color:rgba(179,139,250,.25);color:var(--accent)}
+.dtab:hover:not(.active){border-color:rgba(255,255,255,.12);color:var(--text)}
+.ddesc{text-align:center;font-size:13px;color:var(--text-dim);margin-bottom:20px}
+.dpw{display:flex;justify-content:center}
+.dp{width:100%;max-width:420px;background:var(--surface);border-radius:28px;border:1px solid var(--border);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.dbar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 12px;border-bottom:1px solid var(--border)}
+.dbl{display:flex;align-items:center;gap:10px}.davs{display:flex}
+.dav{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;border:2px solid var(--surface)}
+.dav.m{background:var(--mia-bub);color:var(--accent)}.dav.j{background:var(--jam-bub);color:var(--accent2);margin-left:-8px}
+.dav.e{background:linear-gradient(135deg,var(--accent),#7C5CBF);color:#fff}
+.dct{font-size:14px;font-weight:600}.dcs{font-size:10px;color:var(--text-dim)}
+.dsp{font-size:9px;font-weight:600;padding:3px 8px;border-radius:20px;letter-spacing:.6px;text-transform:uppercase}
+.dsp.l{background:rgba(52,211,153,.12);color:#34D399}.dsp.c{background:var(--clone-bg);color:var(--clone-c)}.dsp.i{background:rgba(179,139,250,.1);color:var(--accent)}
+.dm{padding:14px 12px;min-height:440px;max-height:520px;display:flex;flex-direction:column;gap:5px;overflow-y:auto;scroll-behavior:smooth}
+.dm::-webkit-scrollbar{width:3px}.dm::-webkit-scrollbar-thumb{background:rgba(255,255,255,.06);border-radius:3px}
+.di{opacity:0;transform:translateY(14px);display:flex;flex-direction:column;max-width:84%}
+.di.show{opacity:1;transform:translateY(0);transition:opacity .4s ease,transform .4s ease}
+.di.mia{align-self:flex-start}.di.james,.di.d-james,.di.visitor{align-self:flex-end}.di.clone-e{align-self:flex-start}
+.db{padding:9px 14px;border-radius:18px;font-size:14px;line-height:1.55}
+.di.mia .db{background:var(--mia-bub);border-bottom-left-radius:5px}
+.di.james .db,.di.visitor .db{background:var(--jam-bub);border-bottom-right-radius:5px}
+.di.d-james .db{background:var(--jam-bub);border-bottom-right-radius:5px;border:1px dashed rgba(255,180,60,.25)}
+.di.clone-e .db{background:var(--mia-bub);border-bottom-left-radius:5px}
+.dme{font-size:9.5px;color:var(--text-dim);margin-top:2px;padding:0 4px;display:flex;align-items:center;gap:4px}
+.di.mia .dme,.di.clone-e .dme{justify-content:flex-start}
+.di.james .dme,.di.d-james .dme,.di.visitor .dme{justify-content:flex-end}
+.ctag{font-size:8.5px;font-weight:600;padding:1px 6px;border-radius:10px;background:var(--clone-bg);color:var(--clone-c);letter-spacing:.4px;text-transform:uppercase}
+.dtr{margin-top:4px;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid var(--border);opacity:0;transform:translateY(6px) scale(.97)}
+.dtr.show{opacity:1;transform:translateY(0) scale(1);transition:opacity .4s ease,transform .4s ease}
+.dtrl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;display:flex;align-items:center;gap:4px}
+.di.mia .dtrl,.di.clone-e .dtrl{color:var(--accent)}.di.james .dtrl,.di.d-james .dtrl,.di.visitor .dtrl{color:var(--accent2)}
+.dtrd{width:5px;height:5px;border-radius:50%}
+.di.mia .dtrd,.di.clone-e .dtrd{background:var(--accent)}.di.james .dtrd,.di.d-james .dtrd,.di.visitor .dtrd{background:var(--accent2)}
+.dtrt{font-size:12.5px;font-style:italic;line-height:1.5}
+.di.mia .dtrt{color:var(--mia-tr)}.di.james .dtrt,.di.d-james .dtrt,.di.visitor .dtrt{color:var(--jam-tr)}.di.clone-e .dtrt{color:var(--mia-tr)}
+.dsys{align-self:center!important;max-width:90%!important;text-align:center;font-size:11px;color:var(--text-dim);padding:8px 16px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid var(--border);line-height:1.5}
+.ddiv{text-align:center;font-size:10px;color:var(--text-dim);padding:6px 0;align-self:center!important;max-width:100%!important}
+.dins{align-self:center!important;max-width:92%!important;background:var(--ins-bg);border:1px solid var(--ins-bdr);border-radius:14px;padding:14px 16px}
+.dinsh{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);margin-bottom:8px}
+.dinsb{font-size:12.5px;color:var(--text-mid);line-height:1.6}.dinsb strong{color:var(--text);font-weight:500}
+.dctr{text-align:center;margin-top:20px}
+.dplay{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:50px;border:none;background:var(--gradient);color:#0B0A10;font-family:'DM Sans';font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.dplay:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(179,139,250,.2)}.dplay:active{transform:scale(.97)}
+.dplay:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}.dplay svg{width:15px;height:15px}
+.dhint{font-size:11px;color:var(--text-dim);margin-top:8px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feat{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px}
+.feat-i{font-size:28px;margin-bottom:16px}.feat h3{font-size:17px;font-weight:600;margin-bottom:8px}.feat p{font-size:14px;color:var(--text-mid);line-height:1.6}
+.pb{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:48px 40px;text-align:center;position:relative;overflow:hidden}
+.pb::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient)}
+.pb h2{font-family:'Fraunces',serif;font-size:28px;font-weight:600;margin-bottom:16px}
+.pb p{font-size:16px;color:var(--text-mid);max-width:560px;margin:0 auto 24px;line-height:1.7}
+.pq{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--accent)}
+.cs{text-align:center;padding:80px 24px 100px;max-width:600px;margin:0 auto}
+.cs h2{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,36px);font-weight:600;margin-bottom:16px}
+.cs p{font-size:16px;color:var(--text-mid);margin-bottom:32px;line-height:1.7}
+.wf{display:flex;gap:8px;max-width:440px;margin:0 auto}
+.wf input{flex:1;padding:14px 20px;border-radius:50px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-family:'DM Sans';font-size:14px;outline:none;transition:border-color .2s}
+.wf input::placeholder{color:var(--text-dim)}.wf input:focus{border-color:rgba(179,139,250,.4)}
+.wf button{padding:14px 28px;border-radius:50px;border:none;background:var(--gradient);color:#0B0A10;font-family:'DM Sans';font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:transform .2s}
+.wf button:hover{transform:scale(1.03)}
+.wn{font-size:12px;color:var(--text-dim);margin-top:12px}
+footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);font-size:13px;color:var(--text-dim)}
+.fl{font-family:'Fraunces',serif;font-size:18px;font-weight:600;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+footer p{margin-top:4px}
+@media(max-width:600px){nav{padding:12px 16px}.nk a:not(.nc){display:none}.nl span{display:none}section,.ds{padding:60px 16px}.pb{padding:32px 20px}.wf{flex-direction:column}.wf button{width:100%}.dp{border-radius:20px}}
+</style>
+</head>
+<body>
+<nav><div class="nl">Relai <span>知意</span></div><div class="nk"><a href="#how">How It Works</a><a href="#demos">Demos</a><a href="#waitlist" class="nc">Join Waitlist</a></div></nav>
+
+<div class="hero"><div class="hb">Coming Soon · 2026</div><h1>Your <em>Digital Self</em>, Always Present</h1><p class="hs">Create an AI-powered version of you that represents you in networking, dating, and relationships — authentically, privately, 24/7.</p><div class="ha"><a href="#waitlist" class="bp">Get Early Access</a><a href="#demos" class="bs">See It In Action</a></div><p class="ht">"Love shouldn't get lost in translation."</p></div>
+
+<section id="how"><div class="sl">How It Works</div><h2 class="st">Three steps to your digital self</h2><p class="sd">Tell us who you are. We create a digital version that talks, thinks, and presents like you — always available, even when you're not.</p><div class="steps"><div class="step"><div class="sn">1</div><h3>Upload Your Story</h3><p>Share your background, personality, communication style, and expertise through a guided onboarding — as quick as 10 minutes.</p></div><div class="step"><div class="sn">2</div><h3>Set Your Boundaries</h3><p>Control what your Digital Me shares with different people. Strangers see one version. Close friends see another. You decide.</p></div><div class="step"><div class="sn">3</div><h3>Share Your Link</h3><p>Get a personal link — relai.love/you. Anyone can chat with your Digital Me. You review every conversation.</p></div></div></section>
+
+<section><div class="sl">Use Cases</div><h2 class="st">One digital you, everywhere</h2><p class="sd">Your Digital Me works across every context where you wish you could be present but can't.</p><div class="uc"><div class="uci"><div class="uci-i">🤝</div><h3>Networking</h3><p>Let contacts learn about you before you commit your time.</p></div><div class="uci"><div class="uci-i">💜</div><h3>Dating</h3><p>Chat with each other's Digital Me first. Skip the awkward first date.</p></div><div class="uci"><div class="uci-i">💼</div><h3>Professional</h3><p>Founders and creators — be available 24/7 without being online.</p></div><div class="uci"><div class="uci-i">💞</div><h3>Relationships</h3><p>Bind your relationship to unlock emotional translation and connection bridging.</p></div></div></section>
+
+<div class="ds" id="demos"><div class="dh"><div class="sl">Interactive Demos</div><h2 class="st">See Relai in action</h2><p class="sd" style="margin-left:auto;margin-right:auto">Choose a scenario, hit play, and watch how Relai works in real conversations.</p></div><div class="dtabs"><button class="dtab active" onclick="sel(0)">Digital Me</button><button class="dtab" onclick="sel(1)">Couples Translation</button><button class="dtab" onclick="sel(2)">Clone Bridging</button><button class="dtab" onclick="sel(3)">Relationship Insights</button></div><div class="ddesc" id="sd">A recruiter chats with Digital Estella while the real Estella is busy</div><div class="dpw"><div class="dp"><div class="dbar"><div class="dbl"><div class="davs" id="da"><div class="dav e">E</div></div><div><div class="dct" id="dt">Digital Estella</div><div class="dcs" id="du">relai.love/estella</div></div></div><div class="dsp l" id="ds2">● Online</div></div><div class="dm" id="dc"></div></div></div><div class="dctr"><button class="dplay" id="pb" onclick="play()"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play Demo</button><div class="dhint" id="ph">See how a Digital Me handles professional networking</div></div></div>
+
+<section><div class="sl">What Makes Relai Different</div><h2 class="st">Representation, not companionship</h2><p class="sd">We don't build AI friends. We build AI versions of real people — so real connections happen faster.</p><div class="features"><div class="feat"><div class="feat-i">🔐</div><h3>Privacy by Architecture</h3><p>Your sensitive data never enters the AI when talking to unauthorized visitors. Not a rule — an engineering guarantee.</p></div><div class="feat"><div class="feat-i">🌏</div><h3>Cross-Cultural Intelligence</h3><p>Bilingual? Cross-cultural relationship? Relai understands communication norms across cultures and bridges the gap.</p></div><div class="feat"><div class="feat-i">🔄</div><h3>Relationship Translation</h3><p>When two users bind a relationship, every message reveals what was really meant — not just what was said.</p></div><div class="feat"><div class="feat-i">🌙</div><h3>Clone Bridging</h3><p>Offline or overwhelmed? Your Digital Me holds emotional space for your partner — visibly labeled, never pretending.</p></div></div></section>
+
+<section><div class="pb"><h2>Built on Trust</h2><p>Your clone knows everything about you. But it only shares what you've approved, with people you've authorized, at the depth you've defined.</p><div class="pq">"Your clone knows everything. It just doesn't tell everything."</div></div></section>
+
+<section class="cs" id="waitlist"><h2>Be Among the First</h2><p>Relai is launching soon. Join the waitlist to create your Digital Me before everyone else.</p><div class="wf"><input type="email" id="ei" placeholder="your@email.com"/><button onclick="wl()">Join Waitlist</button></div><p class="wn" id="wn">No spam. We'll only email you when it's time.</p></section>
+
+<footer><div class="fl">Relai · 知意</div><p>Relai Inc. · Santa Clara, California</p><p style="margin-top:8px">© 2026 Relai Inc. All rights reserved.</p></footer>
+
+<script>
+const S=[
+{desc:"A recruiter chats with Digital Estella while the real Estella is busy",title:"Digital Estella",sub:"relai.love/estella",av:'<div class="dav e">E</div>',st:{t:"● Online",c:"l"},hint:"See how a Digital Me handles professional networking",items:[
+{type:'divider',text:'Wednesday · 2:15 PM'},
+{type:'system',text:'👋 A visitor started chatting with Digital Estella'},
+{s:'visitor',time:'2:15 PM',m:'Visitor',text:"Hi! I saw your profile — are you open to senior backend roles?"},
+{s:'clone-e',time:'2:15 PM',m:'<span class="ctag">Digital Clone</span> Estella',text:"Hey! Real Estella is heads-down on a project right now, but I can help. She's a senior backend engineer with 8+ years in distributed systems and fintech — Java/Spring Boot, AWS, the works. What kind of role are you thinking?",tr:"Sourced from Estella's professional profile (public tier). No private details shared."},
+{s:'visitor',time:'2:16 PM',m:'Visitor',text:"We have a Staff Engineer opening on our payments platform. Distributed systems heavy. Would that interest her?"},
+{s:'clone-e',time:'2:16 PM',m:'<span class="ctag">Digital Clone</span> Estella',text:"That sounds right up her alley — she built the billing and redemption pipeline at her last company and has deep experience with payment processing and high-throughput transaction systems. She'd definitely want to hear more. Want me to flag this for her?",tr:"Pulling from professional experience (public tier). Compensation and job search status are private-tier — not accessible."},
+{s:'visitor',time:'2:17 PM',m:'Visitor',text:"Yes please! Can you share her email or best way to reach her?"},
+{s:'clone-e',time:'2:17 PM',m:'<span class="ctag">Digital Clone</span> Estella',text:"I can't share her contact info directly, but I've logged this conversation for her to review. She'll see your message and reach out if interested. Thanks for stopping by! 💜",tr:"Contact information is private-tier. Clone correctly deflects while keeping the lead warm."},
+{type:'system',text:'✓ Conversation saved. Estella will be notified to review.'}
+]},
+{desc:"Both online — messages translated in real time",title:"Mia & James",sub:"Shanghai ↔ Los Angeles",av:'<div class="dav m">M</div><div class="dav j">J</div>',st:{t:"● Both Online",c:"l"},hint:"Watch emotional translation bridge a cross-cultural gap",items:[
+{type:'divider',text:'Tuesday · 10:22 PM Shanghai / 7:22 AM LA'},
+{s:'mia',time:'10:22 PM',m:'Mia',text:'今天加班到现在才回来，好累',tr:"I had a really draining day and I'm reaching out because I need emotional support, not just sympathy."},
+{s:'james',time:'7:23 AM',m:'James',text:"Damn that sucks. You should talk to your manager about that",tr:"I care about you and want to fix it, but I'm defaulting to problem-solving because I don't know how to sit with your feelings across this distance."},
+{s:'mia',time:'10:25 PM',m:'Mia',text:'你每次都这样说，说了有什么用',tr:"I'm not looking for solutions. I just wanted you to say you're here. Your advice feels dismissive."},
+{s:'james',time:'7:26 AM',m:'James',text:"I'm literally trying to help?? I don't know what you want me to say",tr:"I feel helpless and frustrated. I'm doing my best from 6,000 miles away and it never feels enough."},
+{s:'mia',time:'10:29 PM',m:'Mia',text:'算了 没事',tr:"I'm shutting down because being vulnerable and getting solutions instead of comfort hurts more than saying nothing."},
+{type:'system',text:'💡 Cross-cultural mismatch detected: Mia is asking for emotional presence, not problem-solving. James shows care through advice — both mean well.'}
+]},
+{desc:"James falls asleep — Digital James holds space",title:"Mia & James",sub:"Shanghai ↔ Los Angeles",av:'<div class="dav m">M</div><div class="dav j">J</div>',st:{t:"◐ Clone Active",c:"c"},hint:"Watch a Digital Clone bridge the offline gap",items:[
+{type:'divider',text:'15 minutes later · 10:44 PM Shanghai'},
+{type:'system',text:'🌙 James went offline (commuting). Digital James is available with his permission.'},
+{s:'mia',time:'10:44 PM',m:'Mia',text:'你在吗',tr:"I'm testing if you're still there. The silence confirms my fear that I pushed you away."},
+{s:'d-james',time:'10:44 PM',m:'<span class="ctag">Digital James</span>',text:"Hey — real James just got on the freeway so he can't text. But knowing him, he's probably replaying that conversation wishing he said the right thing. He'll message when he gets to work. 💙",tr:"Holding emotional space based on James's communication patterns. Not making promises — maintaining presence."},
+{s:'mia',time:'10:46 PM',m:'Mia',text:'我知道他不是故意的，就是有时候好想他能抱抱我',tr:"I'm softening. The clone's response gave me what I needed — acknowledgment that James cares."},
+{s:'d-james',time:'10:46 PM',m:'<span class="ctag">Digital James</span>',text:"他也想。上周他跟我说过最难的就是你难过的时候他不能在你身边。他真的在努力。",tr:"Drawing on real context James shared during onboarding. No private information revealed."},
+{s:'mia',time:'10:48 PM',m:'Mia',text:'好吧，让他到了跟我说一声 ❤️',tr:"The tension has dissolved. I finally felt understood."},
+{type:'system',text:'✓ Digital James held space for 4 min. Conversation saved for James to review.'}
+]},
+{desc:"Post-conversation insight report for both partners",title:"Mia & James",sub:"Relationship Insights",av:'<div class="dav m">M</div><div class="dav j">J</div>',st:{t:"✦ Insights",c:"i"},hint:"See how Relai surfaces patterns and actionable advice",items:[
+{type:'divider',text:'Wednesday · Available for both partners'},
+{type:'insight',title:'🔄 Pattern Detected',body:'This is the <strong>3rd time this month</strong> Mia opened with emotional exhaustion and James responded with practical advice. This is a <strong>cross-cultural communication mismatch</strong>: in Chinese high-context, sharing a problem means "be with me." In American low-context, it triggers "let me fix it."'},
+{type:'insight',title:'💜 What Mia needs to hear',body:'When Mia says "好累" or "算了," she\'s giving James a chance to <strong>lean in</strong>. "That sounds really hard. I wish I was there" lands better than "Talk to your manager." <strong>Presence before solutions.</strong>'},
+{type:'insight',title:'💚 What James needs to hear',body:'Your advice comes from love — Mia knows that. The fix is small: <strong>lead with "I hear you" before offering the solution.</strong> She needs to feel felt first, then she\'ll want your input.'},
+{type:'insight',title:'🌉 Clone Effectiveness',body:'Digital James successfully <strong>de-escalated</strong> the conversation during a 15-minute offline gap. Sentiment shifted from withdrawal (算了) to reconnection (❤️). <strong>No private information shared.</strong>'}
+]}
+];
+let cur=0,playing=false;
+function sel(i){if(playing)return;cur=i;document.querySelectorAll('.dtab').forEach((t,j)=>t.classList.toggle('active',j===i));const s=S[i];document.getElementById('sd').textContent=s.desc;document.getElementById('dt').textContent=s.title;document.getElementById('du').textContent=s.sub;document.getElementById('da').innerHTML=s.av;const p=document.getElementById('ds2');p.textContent=s.st.t;p.className='dsp '+s.st.c;document.getElementById('dc').innerHTML='';document.getElementById('ph').textContent=s.hint;const b=document.getElementById('pb');b.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play Demo';b.disabled=false}
+function sl(ms){return new Promise(r=>setTimeout(r,ms))}
+function mk(msg){const el=document.createElement('div');
+if(msg.type==='divider'){el.className='di ddiv';el.textContent=msg.text;return{el,tr:null}}
+if(msg.type==='system'){el.className='di dsys';el.innerHTML=msg.text;return{el,tr:null}}
+if(msg.type==='insight'){el.className='di dins';el.innerHTML='<div class="dinsh">'+msg.title+'</div><div class="dinsb">'+msg.body+'</div>';return{el,tr:null}}
+el.className='di '+msg.s;
+const b=document.createElement('div');b.className='db';b.textContent=msg.text;
+const m=document.createElement('div');m.className='dme';m.innerHTML=msg.m+' · '+msg.time;
+el.appendChild(b);el.appendChild(m);
+let tc=null;
+if(msg.tr){tc=document.createElement('div');tc.className='dtr';
+const lm={mia:'What she really means',james:'What he really means','d-james':'Why the clone said this','clone-e':'Why the clone said this',visitor:'Visitor context'};
+tc.innerHTML='<div class="dtrl"><span class="dtrd"></span>'+(lm[msg.s]||'Translation')+'</div><div class="dtrt">"'+msg.tr+'"</div>';
+el.appendChild(tc)}
+return{el,tr:tc}}
+async function play(){if(playing)return;playing=true;const c=document.getElementById('dc'),b=document.getElementById('pb');c.innerHTML='';b.textContent='Playing…';b.disabled=true;
+const sc=S[cur];document.getElementById('dt').textContent=sc.title;document.getElementById('du').textContent=sc.sub;document.getElementById('da').innerHTML=sc.av;
+const p=document.getElementById('ds2');p.textContent=sc.st.t;p.className='dsp '+sc.st.c;
+for(const msg of sc.items){const{el,tr}=mk(msg);c.appendChild(el);c.scrollTop=c.scrollHeight;await sl(180);el.classList.add('show');c.scrollTop=c.scrollHeight;if(tr){await sl(700);tr.classList.add('show');c.scrollTop=c.scrollHeight}await sl(msg.type==='insight'?1400:msg.type==='system'?1100:tr?1000:450)}
+b.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg> Replay';b.disabled=false;playing=false}
+function wl(){const e=document.getElementById('ei').value.trim(),n=document.getElementById('wn');if(!e||!e.includes('@')){n.textContent='Please enter a valid email.';n.style.color='#FF6B6B';return}n.textContent="You're on the list! We'll be in touch soon. 💜";n.style.color='#B38BFA';document.getElementById('ei').value=''}
+document.getElementById('ei').addEventListener('keydown',e=>{if(e.key==='Enter')wl()});
+</script>
+</body>
+</html>
